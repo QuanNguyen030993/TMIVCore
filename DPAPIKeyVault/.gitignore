@@ -1,0 +1,25 @@
+# Build results
+bin/
+obj/
+*.dll
+*.pdb
+*.exe
+
+# IDE
+.vscode/
+.vs/
+*.csproj.user
+*.sln.user
+
+# Config files (có thể chứa data)
+keyvault.json
+appsettings.local.json
+*.local.json
+
+# Dependencies
+packages/
+.nuget/
+
+# OS
+.DS_Store
+Thumbs.db

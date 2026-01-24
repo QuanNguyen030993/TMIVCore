@@ -1,0 +1,21 @@
+bin/
+obj/
+*.dll
+*.pdb
+*.exe
+
+.vscode/
+.vs/
+*.csproj.user
+
+# Generated config files
+app-config.json
+database_prod.json
+api_keys.json
+jwt_secret.json
+*.local.json
+
+packages/
+.nuget/
+.DS_Store
+Thumbs.db
