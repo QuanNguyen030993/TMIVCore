@@ -8,15 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- Reference tới DPAPIKeyVault Library -->
-    <Reference Include="DPAPIKeyVault">
-      <HintPath>..\DPAPIKeyVault\bin\Debug\net8.0\DPAPIKeyVault.dll</HintPath>
-    </Reference>
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="4.7.0" />
+    <PackageReference Include="System.Text.Json" Version="4.7.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="4.7.0" />
-    <PackageReference Include="System.Text.Json" Version="4.7.1" />
+    <ProjectReference Include="..\DPAPIKeyVault\DPAPIKeyVault.csproj" />
   </ItemGroup>
 
 </Project>
