@@ -6,12 +6,14 @@ using DPAPIKeyVault;
 
 
 string databasePassword = "P@ssw0rd123!DatabaseSecret";
-var vault = new ConfigManager("app-config.json");
-
+//string saltKey = DPAPIKeyVault.SaltKey.GenerateSalt32_Hex();
+string saltKey = "afb6de3ec164c2fbfa6d236c1be16bc1";
+string encryptedSecretKey = "Tmiv#1234";
+var text = System.Environment.GetEnvironmentVariable("USERNAME");
 try
 {
-
-    vault.SaveEncryptedKey(databasePassword, "DB_PASSWORD", "Database connection password");
+    string encryptedKey = KeyVaultLocal.EncryptKey("password@123", encryptedSecretKey, saltKey);
+    string password = KeyVaultLocal.DecryptKey(encryptedKey, encryptedSecretKey, saltKey);
 }
 catch (Exception ex)
 {
@@ -19,51 +21,10 @@ catch (Exception ex)
 }
 
 
-try
-{
-    var vaultReader = new ConfigManager("app-config.json");
-    string decryptedPassword = vaultReader.LoadDecryptedKey();
-
-}
-catch (Exception ex)
-{
-
-}
 
 
-var credentials = new Dictionary<string, (string password, string description)>
-{
-    { "database_prod.json", ("DbProd@2026!Secure", "Production Database") },
-    { "api_keys.json", ("sk_live_abc123def456", "Payment API Key") },
-    { "jwt_secret.json", ("jwt_secret_xyz_789_long_key", "JWT Secret") }
-};
-
-foreach (var cred in credentials)
-{
-    try
-    {
-        var mgr = new ConfigManager(cred.Key);
-        mgr.SaveEncryptedKey(cred.Value.password, Path.GetFileNameWithoutExtension(cred.Key), cred.Value.description);
-
-    }
-    catch (Exception ex)
-    {
-
-    }
-}
 
 
-try
-{
-    var configMgr = new ConfigManager("app-config.json");
-    var config = configMgr.GetConfig();
-
-
-}
-catch (Exception ex)
-{
-
-}
 
 
 
