@@ -1,30 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\GitLabSample\\TMIVCore\\",
+  "WorkspaceRootPath": "D:\\GitLabSample\\GitHub\\TMIVCore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BC23-DE45F0678901}|ConsumerApp\\ConsumerApp.csproj|d:\\gitlabsample\\tmivcore\\consumerapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BC23-DE45F0678901}|ConsumerApp\\ConsumerApp.csproj|d:\\gitlabsample\\github\\tmivcore\\consumerapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BC23-DE45F0678901}|ConsumerApp\\ConsumerApp.csproj|solutionrelative:consumerapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BC23-DE45F0678901}|ConsumerApp\\ConsumerApp.csproj|d:\\gitlabsample\\tmivcore\\consumerapp\\consumerapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BC23-DE45F0678901}|ConsumerApp\\ConsumerApp.csproj|solutionrelative:consumerapp\\consumerapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9CB9C486-F3D5-46D6-9D66-5C347162BB3A}|TMIVHashing\\TMIVHashing.csproj|d:\\gitlabsample\\tmivcore\\tmivhashing\\tmivhashing.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{9CB9C486-F3D5-46D6-9D66-5C347162BB3A}|TMIVHashing\\TMIVHashing.csproj|solutionrelative:tmivhashing\\tmivhashing.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9CB9C486-F3D5-46D6-9D66-5C347162BB3A}|TMIVHashing\\TMIVHashing.csproj|d:\\gitlabsample\\tmivcore\\tmivhashing\\src\\keyvaultlocal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9CB9C486-F3D5-46D6-9D66-5C347162BB3A}|TMIVHashing\\TMIVHashing.csproj|solutionrelative:tmivhashing\\src\\keyvaultlocal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9CB9C486-F3D5-46D6-9D66-5C347162BB3A}|TMIVHashing\\TMIVHashing.csproj|d:\\gitlabsample\\tmivcore\\tmivhashing\\src\\saltkey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9CB9C486-F3D5-46D6-9D66-5C347162BB3A}|TMIVHashing\\TMIVHashing.csproj|d:\\gitlabsample\\github\\tmivcore\\tmivhashing\\src\\saltkey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9CB9C486-F3D5-46D6-9D66-5C347162BB3A}|TMIVHashing\\TMIVHashing.csproj|solutionrelative:tmivhashing\\src\\saltkey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BC23-DE45F0678901}|ConsumerApp\\ConsumerApp.csproj|d:\\gitlabsample\\tmivcore\\consumerapp\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BC23-DE45F0678901}|ConsumerApp\\ConsumerApp.csproj|solutionrelative:consumerapp\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -43,77 +27,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ConsumerApp",
-              "DocumentMoniker": "D:\\GitLabSample\\TMIVCore\\ConsumerApp\\ConsumerApp.csproj",
-              "RelativeDocumentMoniker": "ConsumerApp\\ConsumerApp.csproj",
-              "ToolTip": "D:\\GitLabSample\\TMIVCore\\ConsumerApp\\ConsumerApp.csproj",
-              "RelativeToolTip": "ConsumerApp\\ConsumerApp.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-01-26T09:38:36.384Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "KeyVaultLocal.cs",
-              "DocumentMoniker": "D:\\GitLabSample\\TMIVCore\\TMIVHashing\\src\\KeyVaultLocal.cs",
-              "RelativeDocumentMoniker": "TMIVHashing\\src\\KeyVaultLocal.cs",
-              "ToolTip": "D:\\GitLabSample\\TMIVCore\\TMIVHashing\\src\\KeyVaultLocal.cs",
-              "RelativeToolTip": "TMIVHashing\\src\\KeyVaultLocal.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-26T09:25:48.114Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "SaltKey.cs",
-              "DocumentMoniker": "D:\\GitLabSample\\TMIVCore\\TMIVHashing\\src\\SaltKey.cs",
+              "DocumentMoniker": "D:\\GitLabSample\\GitHub\\TMIVCore\\TMIVHashing\\src\\SaltKey.cs",
               "RelativeDocumentMoniker": "TMIVHashing\\src\\SaltKey.cs",
-              "ToolTip": "D:\\GitLabSample\\TMIVCore\\TMIVHashing\\src\\SaltKey.cs",
+              "ToolTip": "D:\\GitLabSample\\GitHub\\TMIVCore\\TMIVHashing\\src\\SaltKey.cs",
               "RelativeToolTip": "TMIVHashing\\src\\SaltKey.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-26T09:24:54.082Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TMIVHashing",
-              "DocumentMoniker": "D:\\GitLabSample\\TMIVCore\\TMIVHashing\\TMIVHashing.csproj",
-              "RelativeDocumentMoniker": "TMIVHashing\\TMIVHashing.csproj",
-              "ToolTip": "D:\\GitLabSample\\TMIVCore\\TMIVHashing\\TMIVHashing.csproj",
-              "RelativeToolTip": "TMIVHashing\\TMIVHashing.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-01-26T09:23:50.182Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": ".gitignore",
-              "DocumentMoniker": "D:\\GitLabSample\\TMIVCore\\ConsumerApp\\.gitignore",
-              "RelativeDocumentMoniker": "ConsumerApp\\.gitignore",
-              "ToolTip": "D:\\GitLabSample\\TMIVCore\\ConsumerApp\\.gitignore",
-              "RelativeToolTip": "ConsumerApp\\.gitignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-01-26T06:19:48.185Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\GitLabSample\\TMIVCore\\ConsumerApp\\Program.cs",
+              "DocumentMoniker": "D:\\GitLabSample\\GitHub\\TMIVCore\\ConsumerApp\\Program.cs",
               "RelativeDocumentMoniker": "ConsumerApp\\Program.cs",
-              "ToolTip": "D:\\GitLabSample\\TMIVCore\\ConsumerApp\\Program.cs",
+              "ToolTip": "D:\\GitLabSample\\GitHub\\TMIVCore\\ConsumerApp\\Program.cs",
               "RelativeToolTip": "ConsumerApp\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-26T06:16:29.027Z",
               "EditorCaption": ""

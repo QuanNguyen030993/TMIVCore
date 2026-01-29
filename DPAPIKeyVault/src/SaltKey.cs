@@ -14,7 +14,7 @@ namespace DPAPIKeyVault
     {
         public static string GenerateSalt32_Hex()
         {
-            byte[] bytes = RandomNumberGenerator.GetBytes(16);
+            byte[] bytes = new byte[16];
             var sb = new StringBuilder(32);
             foreach (var b in bytes)
                 sb.Append(b.ToString("x2"));

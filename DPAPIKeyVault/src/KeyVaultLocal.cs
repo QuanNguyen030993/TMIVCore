@@ -24,7 +24,7 @@ namespace DPAPIKeyVault
                 byte[] dataToEncrypt = Encoding.UTF8.GetBytes(plainKey);
                 byte[] entropy = Encoding.UTF8.GetBytes(salt32); // salt/entropy
                 byte[] key = SHA256.HashData(Encoding.UTF8.GetBytes(aesKey32)); // 32 bytes
-                byte[] iv = RandomNumberGenerator.GetBytes(16);                 // IV 16 bytes
+                byte[] iv = new byte[16];                 // IV 16 bytes
 
                 using var aes = Aes.Create();
                 aes.Key = key;
