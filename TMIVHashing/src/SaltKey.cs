@@ -11,6 +11,25 @@ namespace TMIVHashing
     /// </summary>
     public class SaltKey
     {
+        private const string _alphaNum = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+        /// <summary>
+        /// Generate a random plain-text string of length 32 containing A-Z a-z 0-9.
+        /// </summary>
+        public static string GenerateRandomPlain32()
+        {
+            var chars = new char[32];
+            using var rng = RandomNumberGenerator.Create();
+            var buffer = new byte[4];
+            for (int i = 0; i < 32; i++)
+            {
+                rng.GetBytes(buffer);
+                uint val = BitConverter.ToUInt32(buffer, 0);
+                chars[i] = _alphaNum[(int)(val % (uint)_alphaNum.Length)];
+            }
+            return new string(chars);
+        }
+
         public static string GenerateSalt32_Hex()
         {
             byte[] bytes = new byte[16]; 

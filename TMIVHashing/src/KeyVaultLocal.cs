@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Collections.Generic;
 
 namespace TMIVHashing
 {
@@ -84,6 +85,55 @@ namespace TMIVHashing
             {
                 throw new Exception("Lỗi khi giải mã key", ex);
             }
+        }
+
+        /// <summary>
+        /// Read secret and salt from environment variables, perform the iterative
+        /// encrypt sequence (rounds times) described by the user, then recover
+        /// the original secret and salt and use them to encrypt the provided
+        /// connection password via DPAPI-based EncryptKey.
+        /// Environment variable names default to `APP_SECRET_KEY` and `APP_SALT_KEY`.
+        /// </summary>
+        public static string EncryptConnectionStringPassword(string passwordPlain, string envSecretVar = "APP_SECRET_KEY", string envSaltVar = "APP_SALT_KEY", int rounds = 5)
+        {
+            var secretPlain = Environment.GetEnvironmentVariable(envSecretVar);
+            var saltPlain = Environment.GetEnvironmentVariable(envSaltVar);
+
+            if (string.IsNullOrEmpty(secretPlain))
+                throw new ArgumentException($"Environment variable {envSecretVar} is not set or empty.", envSecretVar);
+            if (string.IsNullOrEmpty(saltPlain))
+                throw new ArgumentException($"Environment variable {envSaltVar} is not set or empty.", envSaltVar);
+
+            // Optional: allow keys of various lengths, but advise 32-char plain text
+            if (secretPlain.Length < 8 || saltPlain.Length < 8)
+                throw new ArgumentException("Secret and salt should be at least 8 characters; recommended 32.");
+
+            var sList = new List<string>();
+            var tList = new List<string>();
+
+            string currentSecret = secretPlain;
+
+            for (int i = 0; i < rounds; i++)
+            {
+                // Encrypt current secret with the plain salt => new secret cipher
+                currentSecret = SaltKey.EncryptECB(currentSecret, saltPlain);
+                sList.Add(currentSecret);
+
+                // Encrypt the plain salt with the new secret cipher => salt cipher
+                var saltCipher = SaltKey.EncryptECB(saltPlain, currentSecret);
+                tList.Add(saltCipher);
+            }
+
+            // Recover original secret by decrypting the last secret cipher 'rounds' times with plain salt
+            string recoveredSecret = sList.Last();
+            for (int i = 0; i < rounds; i++)
+                recoveredSecret = SaltKey.DecryptECB(recoveredSecret, saltPlain);
+
+            // Recover original salt by decrypting the last salt-cipher with the last secret-cipher
+            string recoveredSalt = SaltKey.DecryptECB(tList.Last(), sList.Last());
+
+            // Use DPAPI-backed EncryptKey to encrypt the connection password using the recovered keys
+            return EncryptKey(passwordPlain, recoveredSecret, recoveredSalt);
         }
 
        
