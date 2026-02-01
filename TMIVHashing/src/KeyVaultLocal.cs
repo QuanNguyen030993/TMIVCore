@@ -87,13 +87,7 @@ namespace TMIVHashing
             }
         }
 
-        /// <summary>
-        /// Read secret and salt from environment variables, perform the iterative
-        /// encrypt sequence (rounds times) described by the user, then recover
-        /// the original secret and salt and use them to encrypt the provided
-        /// connection password via DPAPI-based EncryptKey.
-        /// Environment variable names default to `APP_SECRET_KEY` and `APP_SALT_KEY`.
-        /// </summary>
+
         public static string EncryptConnectionStringPassword(string passwordPlain, string envSecretVar = "APP_SECRET_KEY", string envSaltVar = "APP_SALT_KEY", int rounds = 5)
         {
             var secretPlain = Environment.GetEnvironmentVariable(envSecretVar, EnvironmentVariableTarget.Machine);
@@ -105,7 +99,7 @@ namespace TMIVHashing
                 throw new ArgumentException($"Environment variable {envSaltVar} is not set or empty.", envSaltVar);
 
             // Optional: allow keys of various lengths, but advise 32-char plain text
-            if (secretPlain.Length < 8 || saltPlain.Length < 8)
+            if (secretPlain.Length < 32 || saltPlain.Length < 32)
                 throw new ArgumentException("Secret and salt should be at least 8 characters; recommended 32.");
 
             var sList = new List<string>();
@@ -124,21 +118,16 @@ namespace TMIVHashing
                 tList.Add(saltCipher);
             }
 
-            // Recover original secret by decrypting the last secret cipher 'rounds' times with plain salt
-            string recoveredSecret = sList.Last();
-            for (int i = 0; i < rounds; i++)
-                recoveredSecret = SaltKey.DecryptECB(recoveredSecret, saltPlain);
+            // Use the transformed (final) secret and salt as key material.
+            // This ensures the stored cipher cannot be decrypted using the original plain environment values.
+            var finalSecret = sList.Last();
+            var finalSalt = tList.Last();
 
-            // Recover original salt by decrypting the last salt-cipher with the last secret-cipher
-            string recoveredSalt = SaltKey.DecryptECB(tList.Last(), sList.Last());
-
-            // Use DPAPI-backed EncryptKey to encrypt the connection password using the recovered keys
-            return EncryptKey(passwordPlain, recoveredSecret, recoveredSalt);
+            // Use DPAPI-backed EncryptKey to encrypt the connection password using the transformed keys
+            return EncryptKey(passwordPlain, finalSecret, finalSalt);
         }
 
-        /// <summary>
-        /// Giải mã mật khẩu connection đã được mã hóa bằng EncryptConnectionStringPassword
-        /// </summary>
+
         public static string DecryptConnectionStringPassword(string passwordCipherB64, string envSecretVar = "APP_SECRET_KEY", string envSaltVar = "APP_SALT_KEY", int rounds = 5)
         {
             var secretPlain = Environment.GetEnvironmentVariable(envSecretVar, EnvironmentVariableTarget.Machine);
@@ -150,7 +139,7 @@ namespace TMIVHashing
                 throw new ArgumentException($"Environment variable {envSaltVar} is not set or empty.", envSaltVar);
 
             // Optional: allow keys of various lengths, but advise 32-char plain text
-            if (secretPlain.Length < 8 || saltPlain.Length < 8)
+            if (secretPlain.Length < 32 || saltPlain.Length < 32)
                 throw new ArgumentException("Secret and salt should be at least 8 characters; recommended 32.");
 
             var sList = new List<string>();
@@ -169,16 +158,12 @@ namespace TMIVHashing
                 tList.Add(saltCipher);
             }
 
-            // Recover original secret by decrypting the last secret cipher 'rounds' times with plain salt
-            string recoveredSecret = sList.Last();
-            for (int i = 0; i < rounds; i++)
-                recoveredSecret = SaltKey.DecryptECB(recoveredSecret, saltPlain);
+            // Use the transformed (final) secret and salt as key material for decryption
+            var finalSecret = sList.Last();
+            var finalSalt = tList.Last();
 
-            // Recover original salt by decrypting the last salt-cipher with the last secret-cipher
-            string recoveredSalt = SaltKey.DecryptECB(tList.Last(), sList.Last());
-
-            // Use DPAPI-backed DecryptKey to decrypt the connection password using the recovered keys
-            return DecryptKey(passwordCipherB64, recoveredSecret, recoveredSalt);
+            // Use DPAPI-backed DecryptKey to decrypt the connection password using the transformed keys
+            return DecryptKey(passwordCipherB64, finalSecret, finalSalt);
         }
     }
 }

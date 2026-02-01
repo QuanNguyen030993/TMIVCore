@@ -1,14 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\GitLabSample\\GitHub\\TMIVCore\\",
+  "WorkspaceRootPath": "D:\\Source\\MySource\\TMIVCore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BC23-DE45F0678901}|ConsumerApp\\ConsumerApp.csproj|d:\\gitlabsample\\github\\tmivcore\\consumerapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BC23-DE45F0678901}|ConsumerApp\\ConsumerApp.csproj|d:\\source\\mysource\\tmivcore\\consumerapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2C3D4E5-F6A7-8901-BC23-DE45F0678901}|ConsumerApp\\ConsumerApp.csproj|solutionrelative:consumerapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9CB9C486-F3D5-46D6-9D66-5C347162BB3A}|TMIVHashing\\TMIVHashing.csproj|d:\\gitlabsample\\github\\tmivcore\\tmivhashing\\src\\saltkey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9CB9C486-F3D5-46D6-9D66-5C347162BB3A}|TMIVHashing\\TMIVHashing.csproj|solutionrelative:tmivhashing\\src\\saltkey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9CB9C486-F3D5-46D6-9D66-5C347162BB3A}|TMIVHashing\\TMIVHashing.csproj|d:\\source\\mysource\\tmivcore\\tmivhashing\\src\\keyvaultlocal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CB9C486-F3D5-46D6-9D66-5C347162BB3A}|TMIVHashing\\TMIVHashing.csproj|solutionrelative:tmivhashing\\src\\keyvaultlocal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,67 +18,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SaltKey.cs",
-              "DocumentMoniker": "D:\\GitLabSample\\GitHub\\TMIVCore\\TMIVHashing\\src\\SaltKey.cs",
-              "RelativeDocumentMoniker": "TMIVHashing\\src\\SaltKey.cs",
-              "ToolTip": "D:\\GitLabSample\\GitHub\\TMIVCore\\TMIVHashing\\src\\SaltKey.cs",
-              "RelativeToolTip": "TMIVHashing\\src\\SaltKey.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAkAAAAAAAAAA==",
+              "Title": "KeyVaultLocal.cs",
+              "DocumentMoniker": "D:\\Source\\MySource\\TMIVCore\\TMIVHashing\\src\\KeyVaultLocal.cs",
+              "RelativeDocumentMoniker": "TMIVHashing\\src\\KeyVaultLocal.cs",
+              "ToolTip": "D:\\Source\\MySource\\TMIVCore\\TMIVHashing\\src\\KeyVaultLocal.cs",
+              "RelativeToolTip": "TMIVHashing\\src\\KeyVaultLocal.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAewGAAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-26T09:24:54.082Z",
+              "WhenOpened": "2026-02-01T12:14:31.571Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\GitLabSample\\GitHub\\TMIVCore\\ConsumerApp\\Program.cs",
+              "DocumentMoniker": "D:\\Source\\MySource\\TMIVCore\\ConsumerApp\\Program.cs",
               "RelativeDocumentMoniker": "ConsumerApp\\Program.cs",
-              "ToolTip": "D:\\GitLabSample\\GitHub\\TMIVCore\\ConsumerApp\\Program.cs",
+              "ToolTip": "D:\\Source\\MySource\\TMIVCore\\ConsumerApp\\Program.cs",
               "RelativeToolTip": "ConsumerApp\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAcwB0AAABtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-26T06:16:29.027Z",
+              "WhenOpened": "2026-02-01T12:14:04.21Z",
               "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 290,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:136:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:137:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:138:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             }
           ]
         }
